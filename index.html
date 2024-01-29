@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcom to Kokoa Talk</title>
+    <title>Welcome to Kokoa Clone</title>
   </head>
   <body>
     <div class="status-bar">
@@ -24,6 +24,26 @@
         <!-- 충전중 아이콘 -->
       </div>
     </div>
+
+    <header class="welcome-header">
+      <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+      <p class="welcome-header__text">
+        If you have a Kokoa Acount, log in with your email or phone number.
+      </p>
+    </header>
+    <form id="login-form">
+      <input type="text" placeholder="Email or phone number" />
+      <input type="password" placeholder="Password" />
+      <input type="submit" value="Log In" />
+      <a href="#">Find Kokoa Acount or Password</a>
+    </form>
+    <!-- 
+      이 사이트는 form이 이거 하나 밖에 없어서 class 이름 짓는 걸 고려하지 않아도 되서 다행스
+    그리고 전체 사이트 구성할때 이런게 몇개나 있을까 생각하면서 class 부여할 것!
+  link 같은 건 수도 없이 많을 거라 링크마다 class 부여하는 것보다 
+  연계된 이미 부여된 class 활용하는 것이 좋음
+-->
+
     <script
       src="https://kit.fontawesome.com/32ab459d4f.js"
       crossorigin="anonymous"
