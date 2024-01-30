@@ -1,0 +1,51 @@
+#login-form {
+  display: flex;
+  flex-direction: column; /*display: flex;에서 정렬 기준을 어떻게 할지*/
+  margin: 0px 30px;
+}
+
+#login-form input {
+  border: none;
+  padding: 15px 0px;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+/*:not()은 ~가 아니면 ~ 한다라는 뜻. attribue selector는 []안에 작성*/
+#login-form input:not([type="submit"]) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.9s ease-in-out;
+}
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.9s ease-in-out;
+}
+
+#login-form input:focus {
+  border-color: var(--kjhcolor);
+}
+
+#login-form input:focus::placeholder {
+  color: var(--kjhcolor);
+}
+
+#login-form input[type="submit"] {
+  background-color: var(--kjhcolor);
+  cursor: crosshair; /*pointer, not-allowed, progress 등 */
+  padding: 20px 0px;
+  border-radius: 5px;
+  transition: background-color, color, 1s ease-in-out;
+}
+
+#login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  /*부모의 기본 값을 가져옴 기본값은 검정색 #login-form의 기본 색을 빨강으로 하면 빨강 가져옴*/
+  font-size: 13px;
+}
+
+#login-form input[type="submit"]:hover {
+  background-color: black;
+  color: var(--kjhcolor);
+}
