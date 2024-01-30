@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Rubik+Glitch+Pop&display=swap");
 @import "reset.css"; /*브라우저가 기본으로 작업하는 스타일을 초기화하는 CSS파일*/
+@import "variables.css";
 @import "status-bar.css";
 
 body {
@@ -22,4 +23,32 @@ body {
 .welcome-header__text {
   width: 60%;
   color: #898686; /*오퍼시티로 회색 줌. color로 회색 줘도 돼*/
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column; /*display: flex;에서 정렬 기준을 어떻게 할지*/
+  margin: 0px 30px;
+}
+
+#login-form input {
+  border: none;
+  padding: 15px 0px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+}
+
+#login-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#login-form input:focus {
+  border-color: var(--kjhcolor);
+  transition: border-color 1.5s ease-in-out;
+}
+
+#login-form input:focus::placeholder {
+  color: var(--kjhcolor);
+  transition: color 0.4s ease-in-out;
 }
