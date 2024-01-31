@@ -1,0 +1,25 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9fa;
+  padding: 20px 40px;
+  border-top: 1px solid rgba(121, 121, 121, 0.3);
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__link {
+  color: #2e363e;
+}
+
+/*
+border box 박스 너비랑 패딩 다 주면 CSS는 패딩과 너비를 다 유지하려고 함. 
+너비 200에 패딩 50을 주면 250의 공간을 가지는 것. 그래서 이미지가 넘어가버리는 것.
+그럴 때 패딩을 원래 박스 사이즈 안에서 해결해라고 하는게 border-box임.
+ */

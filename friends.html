@@ -1,1 +1,71 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends - Kokoa Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i>
+        <!-- 와이파이 아이콘 넣기 -->
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fa-solid fa-battery-full fa-lg"></i>
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+    </div>
+    <!--nav>ul>li*4>a로 만듦 그런 담에 tab버튼으로 원하는 영역 입력-->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__btn">
+          <a class="nav__link" href="friends.html"
+            ><i class="fa-solid fa-user fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="#"
+            ><i class="fa-solid fa-comment fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="#"
+            ><i class="fa-solid fa-magnifying-glass fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="#"
+            ><i class="fa-solid fa-ellipsis fa-lg"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+
+    <script
+      src="https://kit.fontawesome.com/32ab459d4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- BEM : .btn = 버튼이라는 block, 
+    .btn__price = 버튼 안에 가격(element) 정보가 있다., 
+    .btn--orange, .btn--big = 오렌지(modifier) 버튼, 큰(modifier) 버튼이다.
+    BEM 규칙에 따르면 id 안쓰고 전부다 class로 통일함
+ -->
+
+<!-- 스크립트는 </body>태그 바로 위에 넣는게 좋은데(즉, 마지막에) 
+    그 이유는 화면 렌더링이 완료된 이후에 스크립트가 실행되도록 하기 위함.
+렌더링이 완료되지 않았는데 스크립트가 실행되면 화면의 값을 읽지 못하는 오류나
+화면 로딩이 지연되는 문제가 발생할 수 있기때문임.
+  -->
+
+<!--특정 같은 문자를 일괄 수정하려면 수정할 문자 드래그 후 ctrl+D-->
