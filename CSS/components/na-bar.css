@@ -4,20 +4,47 @@
   width: 100%;
   box-sizing: border-box;
   background-color: #f9f9fa;
-  padding: 20px 40px;
+  padding: 20px 0px;
   border-top: 1px solid rgba(121, 121, 121, 0.3);
 }
 
 .nav__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .nav__link {
   color: #2e363e;
+  position: relative;
 }
 
+.nav__notification {
+  background-color: tomato;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  position: absolute;
+  /*absolute는 가장가까운 relative를 기준으로 움직임*/
+  top: -22px;
+  left: 15px;
+}
+
+.nav__more {
+  background-color: tomato;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  top: -11px;
+  left: 26px;
+}
 /*
 border box 박스 너비랑 패딩 다 주면 CSS는 패딩과 너비를 다 유지하려고 함. 
 너비 200에 패딩 50을 주면 250의 공간을 가지는 것. 그래서 이미지가 넘어가버리는 것.
