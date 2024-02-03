@@ -4,9 +4,10 @@
 
 /*Components*/
 @import "components/status-bar.css";
-@import "components/na-bar.css";
+@import "components/nav-bar.css";
 @import "components/screen-header.css";
 @import "components/user-component.css";
+@import "components/badge.css";
 
 /*Screens*/
 @import "screens/login.css";
@@ -15,6 +16,11 @@
 body {
   color: #2e363e;
   font-family: "Noto Sans KR", "Rubik Glitch Pop", sans-serif;
+}
+
+.main-screen {
+  padding: 0px var(--horizontal-space);
+  padding-bottom: 15px;
 }
 
 .welcome-header {
