@@ -1,0 +1,23 @@
+#chat-screen {
+  background-color: #abc1d1;
+  height: 11000vh;
+}
+
+#chat-screen .alt-header {
+  top: 10px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #abc1d1;
+  z-index: 1;
+}
+
+#chat-screen .status-bar {
+  background-color: #abc1d1;
+  z-index: 2;
+  /*z-index는 레이어 같은 개념*/
+}
+
+.main-chat {
+  margin-top: 100px;
+}
