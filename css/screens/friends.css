@@ -24,3 +24,31 @@
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.5);
 }
+
+@keyframes hideSplashScreen {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    /*visibility: hidden;은 있긴 있는데, 보이지는 않는 상태라 밑에 있는 다른 요소를 누를 수 있음
+    진짜로 하려면 자바스크립트로 해야함.*/
+  }
+}
+
+#splash-screen {
+  background-color: var(--yellow);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 132px;
+  color: var(--kjhcolor);
+  animation: hideSplashScreen 0.4s ease-in-out forwards;
+  /*forwards는 애니메이션 하고 마지막 상태를 유지하는 것*/
+  animation-delay: 1s;
+}
