@@ -99,3 +99,24 @@
 .open-post__heart-count span {
   margin-left: 3px;
 }
+
+@keyframes heartBeat {
+  0% {
+    tranform: none;
+    color: white;
+  }
+  50% {
+    transform: scale(1.5) rotateY(45deg);
+    color: var(--kjhcolor);
+  }
+  100% {
+    transform: none;
+    color: white;
+  }
+}
+
+.open-post__heart-count:hover i {
+  will-change: transform;
+  /*will-change는 브라우저에 무언가 바뀔거라고 미리 준비하라는 뜻*/
+  animation: heartBeat 1s linear infinite;
+}

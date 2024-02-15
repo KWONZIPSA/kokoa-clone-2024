@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 100vh;
 }
 
 #chat-screen .alt-header {
@@ -18,6 +18,205 @@
   /*z-index는 레이어 같은 개념*/
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
-  margin-top: 100px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s linear;
+}
+
+.chat__timestamp {
+  color: white;
+  background-color: #92a4b2;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+@keyframes leftShowUp {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes rightShowUp {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.main-chat .message-row--opponent {
+  animation: leftShowUp 0.5s ease-in-out forwards;
+}
+
+.message-row--own .message__info {
+  animation: rightShowUp 0.5s ease-in-out forwards;
+}
+
+.message-row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.message-row img {
+  width: 50px;
+  height: 50px;
+  border-radius: 33%;
+  margin-right: 15px;
+}
+
+.message__author {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.message__info {
+  display: flex;
+  align-items: flex-end;
+}
+
+.message__bubble {
+  background-color: white;
+  padding: 13px;
+  font-size: 18px;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  margin-right: 5px;
+}
+
+.message__time,
+.message__author {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.message-row--own {
+  justify-content: flex-end;
+}
+
+.message-row--own .message__bubble {
+  background-color: var(--yellow);
+  border-top-right-radius: 0px;
+  border-top-left-radius: 15px;
+  margin-right: 0px;
+  margin-left: 5px;
+}
+
+/*
+only works flex childeren!!!
+
+.message-row--own .message__bubble {
+  order: 1;
+}
+.message-row--own .message__time {
+  order: 0;
+}
+*/
+
+/*이경우에는 order 안쓰고 row-reverse로 정렬을 할 수 있음*/
+.message-row--own .message__info {
+  flex-direction: row-reverse;
+}
+
+.reply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 25px;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  width: 90%;
+  position: relative;
+}
+
+.reply i {
+  opacity: 0.5;
+}
+
+.reply input {
+  width: 100%;
+  border: var(--main-border);
+  border-radius: 20px;
+  padding: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.reply__column:last-child > i,
+.reply__column:last-child button {
+  position: absolute;
+  right: -22px;
+  top: 4px;
+}
+
+.reply__column:last-child > i {
+  top: 4px;
+  right: 20px;
+}
+
+.reply__column button {
+  background-color: var(--yellow);
+  border: none;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+}
+
+.reply__column button i {
+  opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+  outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 93vw;
+  transform: translateX(-13.5%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
