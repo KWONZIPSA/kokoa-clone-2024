@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 100vh;
 }
 
 #chat-screen .alt-header {
@@ -18,11 +18,23 @@
   /*z-index는 레이어 같은 개념*/
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .main-chat {
   margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.5s linear;
 }
 
 .chat__timestamp {
@@ -32,6 +44,32 @@
   border-radius: 25px;
   font-size: 14px;
   margin-bottom: 25px;
+}
+
+@keyframes leftShowUp {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes rightShowUp {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.main-chat .message-row--opponent {
+  animation: leftShowUp 0.5s ease-in-out forwards;
+}
+
+.message-row--own .message__info {
+  animation: rightShowUp 0.5s ease-in-out forwards;
 }
 
 .message-row {
@@ -110,6 +148,7 @@ only works flex childeren!!!
   padding: 5px 25px;
   align-items: center;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply .reply__column:first-child {
@@ -129,6 +168,7 @@ only works flex childeren!!!
   border: var(--main-border);
   border-radius: 20px;
   padding: 12px;
+  transition: all 0.3s ease-in-out;
 }
 
 .reply__column:last-child > i,
@@ -158,4 +198,25 @@ only works flex childeren!!!
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-face-smile,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 93vw;
+  transform: translateX(-13.5%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
 }
